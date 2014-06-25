@@ -21,6 +21,7 @@ html
               = link_to "イベントを作る", new_event_path
             - if logged_in?
               li
+                = link_to "退会", retire_user_path
                 = link_to "ログアウト", logout_path
             - else
               li
