@@ -14,15 +14,17 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          == link_to "EventManager", root_path, class: "navbar-brand"
+          = link_to "EventManager", root_path, class: "navbar-brand"
         .collapse.navbar-collapse#bs-example-navbar-collapse-1
           ul.nav.navbar-nav.navbar-right
+            li
+              = link_to "イベントを作る", new_event_path
             - if logged_in?
               li
-                == link_to "ログアウト", logout_path
+                = link_to "ログアウト", logout_path
             - else
               li
-                == link_to "Twitter でログイン", "/auth/twitter"
+                = link_to "Twitter でログイン", "/auth/twitter"
     .container
       - if flash[:notice]
         .alert.alert-success
