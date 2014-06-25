@@ -17,8 +17,12 @@ html
           == link_to "EventManager", root_path, class: "navbar-brand"
         .collapse.navbar-collapse#bs-example-navbar-collapse-1
           ul.nav.navbar-nav.navbar-right
-            li
-              == link_to "Twitter でログイン", "/auth/twitter"
+            - if logged_in?
+              li
+                == link_to "ログアウト", logout_path
+            - else
+              li
+                == link_to "Twitter でログイン", "/auth/twitter"
     .container
       - if flash[:notice]
         .alert.alert-success
