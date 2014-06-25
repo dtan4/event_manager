@@ -6,4 +6,9 @@ html
     == javascript_include_tag "application", "data-turbolinks-track" => true
     == csrf_meta_tag
   body
-    == yield
+    header.navbar.navbar-default role="navigation"
+      .container
+        .navbar-header
+          == link_to "EventManager", root_path, class: "navbar-brand"
+    .container
+      == yield
