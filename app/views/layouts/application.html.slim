@@ -2,13 +2,25 @@ doctype html
 html
   head
     title EventManager
-    == stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-    == javascript_include_tag "application", "data-turbolinks-track" => true
-    == csrf_meta_tag
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tag
   body
     header.navbar.navbar-default role="navigation"
       .container
         .navbar-header
+          button.navbar-toggle type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            span.sr-only Toggle Navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
           == link_to "EventManager", root_path, class: "navbar-brand"
+        .collapse.navbar-collapse#bs-example-navbar-collapse-1
+          ul.nav.navbar-nav.navbar-right
+            li
+              == link_to "Twitter でログイン", "/auth/twitter"
     .container
+      - if flash[:notice]
+        .alert.alert-success
+          = flash[:notice]
       == yield
