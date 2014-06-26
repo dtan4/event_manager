@@ -25,6 +25,8 @@ gem 'binding_of_caller', group: [:development, :test]
 
 gem 'ransack', '~> 1.2.2'
 
+gem 'carrierwave', '~> 0.10.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
