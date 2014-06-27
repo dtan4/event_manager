@@ -19,12 +19,16 @@ gem 'spring',        group: :development
 gem 'omniauth', '~> 1.2.1'
 gem 'omniauth-twitter', '~> 1.0.1'
 
-gem 'better_errors', group: [:development, :test]
-gem 'binding_of_caller', group: [:development, :test]
-
 gem 'ransack', '~> 1.2.2'
 
 gem 'carrierwave', '~> 0.10.0'
+
+group :development, :text do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'spring-commands-rspec'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
