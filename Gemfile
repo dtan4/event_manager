@@ -27,6 +27,7 @@ group :development, :text do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rspec-rails', '~> 3.0.0'
+  gem 'shoulda-matchers', require: false
   gem 'spring-commands-rspec'
 end
 

@@ -2,15 +2,7 @@ require 'rails_helper'
 
 describe Event do
   describe "#name" do
-    context "when empty is given" do
-      let(:event) do
-        Event.new(name: "")
-      end
-
-      it "should not be valid" do
-        event.valid?
-        expect(event.errors[:name]).to be_present
-      end
-    end
+    it { expect(subject).to validate_presence_of(:name) }
+    it { expect(subject).to ensure_length_of(:name).is_at_most(50) }
   end
 end
