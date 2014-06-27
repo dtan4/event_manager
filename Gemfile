@@ -23,9 +23,10 @@ gem 'ransack', '~> 1.2.2'
 
 gem 'carrierwave', '~> 0.10.0'
 
-group :development, :text do
+group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'shoulda-matchers', require: false
   gem 'spring-commands-rspec'
