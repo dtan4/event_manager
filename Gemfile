@@ -30,6 +30,11 @@ group :development, :text do
   gem 'spring-commands-rspec'
 end
 
+group :development do
+  gem 'guard-rspec'
+  gem 'terminal-notifier-guard'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
