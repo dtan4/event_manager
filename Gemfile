@@ -34,6 +34,9 @@ end
 
 group :development do
   gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn'
   gem 'guard-rspec'
   gem 'terminal-notifier-guard'
 end

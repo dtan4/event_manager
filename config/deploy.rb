@@ -7,14 +7,21 @@ set :deploy_to, '/var/www/event_manager'
 set :scm, :git
 set :keep_releases, 5
 
+set :default_env, {
+                   rbenv_root: "/opt/rbenv",
+                   path: "/opt/rbenv/shims:/opt/rbenv/bin:$PATH"
+                  }
+
+set :linked_dirs, (fetch(:linked_dirs) + ["tmp/pids"])
+
+set :unicorn_rack_env, "none"
+set :unicorn_config_path, "config/unicorn.rb"
+
 namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
-    end
+    invoke "unicorn:restart"
   end
 
   after :publishing, :restart

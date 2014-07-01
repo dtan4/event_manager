@@ -1,6 +1,6 @@
 listen "127.0.0.1:3000"
 
-pit "tmp/pids/unicorn.pid"
+pid "tmp/pids/unicorn.pid"
 
 worker_processes 2
 
