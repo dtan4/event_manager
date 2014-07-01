@@ -33,6 +33,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '~> 3.1.0'
   gem 'guard-rspec'
   gem 'terminal-notifier-guard'
 end
