@@ -37,7 +37,7 @@ group :development do
   gem 'terminal-notifier-guard'
 end
 
-group :production do
+group :staging, :production do
   gem 'unicorn'
 end
 
